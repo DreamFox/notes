@@ -1281,11 +1281,137 @@ div.pswp__img--placeholder,
   <style>
     .pswp__img { background: #111; }
   </style>
+
+  <style>
+  /* ===== 统一系列皮肤：纸感砖红编辑风（与第 2/3 讲一致） ===== */
+  :root{
+    --paper:#f7f6f3; --card:#fffefb; --ink:#17191b; --ink-soft:#3d4246; --muted:#6d7175;
+    --accent:#9a3b2e; --accent-deep:#772b20; --accent-tint:#f2e6e2;
+    --rule:#dcd7cf; --hairline:#e7e3dc; --pill:#efece6; --pill-2:#f1eee8;
+    --bg:var(--paper); --surface:var(--card); --fg:var(--ink); --border:var(--rule);
+    --accent-ink:var(--accent-deep); --on-accent:var(--paper); --radius:10px;
+    --serif:"Noto Serif SC","Songti SC","STSong","SimSun",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#151617; --card:#202325; --ink:#e9e7e2; --ink-soft:#c8c5be; --muted:#9a968e;
+      --accent:#d9836f; --accent-deep:#e9a08e; --accent-tint:#2a201d;
+      --rule:#323537; --hairline:#26292b; --pill:#26292b; --pill-2:#232629;
+      --bg:var(--paper); --surface:var(--card); --fg:var(--ink); --border:var(--rule);
+      --accent-ink:var(--accent-deep); --on-accent:var(--paper); --radius:10px;
+    }
+  }
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.95}
+  a{color:var(--accent)}
+  ::selection{background:var(--accent-tint);color:var(--accent-deep)}
+  strong{color:var(--ink)}
+  em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent-tint) 62%)}
+  code{font-family:var(--mono);font-size:.88em;background:var(--pill);border:1px solid var(--hairline);border-radius:4px;padding:1px 6px}
+  .wrap{width:calc(100% - 48px);max-width:1180px;margin:0 auto}
+  .topbar{border-bottom:1px solid var(--rule);background:var(--paper)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;font-family:var(--sans);font-size:12.5px;flex-wrap:wrap}
+  .wordmark{font-weight:600;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
+  .topbar-links{display:flex;gap:18px;flex-wrap:wrap}
+  .topbar-links a{color:var(--muted);text-decoration:none}
+  .topbar-links a:hover{color:var(--accent)}
+  .hero{padding:60px 0 36px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:start}
+  .eyebrow{font-family:var(--sans);font-size:12.5px;letter-spacing:.14em;color:var(--accent);font-weight:600;margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,4.6vw,50px);line-height:1.28;font-weight:900;letter-spacing:.01em;margin:0 0 14px;color:var(--ink)}
+  .title-en{font-family:var(--sans);font-size:13px;letter-spacing:.06em;color:var(--muted);margin:0 0 20px}
+  .standfirst{font-family:var(--sans);color:var(--ink-soft);font-size:15.5px;line-height:1.9;margin:0 0 26px;max-width:34em}
+  .hero-meta{border-top:2px solid var(--ink);padding-top:16px;font-family:var(--sans);font-size:13.5px;line-height:1.85;margin:0}
+  .hero-meta > div{margin-top:12px}
+  .hero-meta > div:first-child{margin-top:0}
+  .hero-meta dt{color:var(--muted);font-size:11.5px;letter-spacing:.12em}
+  .hero-meta dd{color:var(--ink);margin:2px 0 0}
+  .hero figure{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px}
+  .hero figure img{display:block;max-width:100%;height:auto;border-radius:6px;cursor:zoom-in}
+  .hero figcaption{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.7}
+  .speakers{display:block;background:transparent;border:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);border-radius:0;overflow:visible;margin:40px 0 0;padding:0}
+  .speaker{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:20px 0;font-family:var(--sans);background:transparent;border:none;border-radius:0;min-height:0}
+  .speaker .role{order:1}
+  .speaker .name{order:2}
+  .speaker .note{order:3}
+  .speaker .role{font-family:var(--sans);font-size:11.5px;background:var(--accent-tint);color:var(--accent-deep);border-radius:99px;padding:2px 10px;max-width:100%;overflow-wrap:anywhere}
+  .speaker .name{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink)}
+  .speaker .note{flex-basis:100%;font-family:var(--sans);font-size:13.5px;color:var(--muted);line-height:1.85;margin-top:4px}
+  .page{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding:44px 0 24px;align-items:start}
+  .sidebar{position:sticky;top:24px;max-height:calc(100vh - 48px);overflow-y:auto;font-family:var(--sans);padding-right:6px}
+  .toc-heading{font-size:11px;letter-spacing:.14em;color:var(--muted);font-weight:700;margin-bottom:8px}
+  .toc{list-style:none;margin:0;padding:0}
+  .toc a{display:block;font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--ink-soft);text-decoration:none;padding:6px 0 6px 12px;border-left:2px solid var(--hairline)}
+  .toc a:hover{color:var(--accent)}
+  .toc-mobile{border:1px solid var(--rule);border-radius:10px;background:var(--card);margin:26px 0 8px;font-family:var(--sans)}
+  .toc-mobile summary{cursor:pointer;padding:14px 18px;font-size:14px;font-weight:600;color:var(--ink)}
+  .toc-mobile .toc{padding:0 18px 14px}
+  main,.main{min-width:0}
+  .chapter{padding:34px 0 18px;border-top:1px solid var(--rule)}
+  .chapter:first-of-type{border-top:none;padding-top:10px}
+  .chapter-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+  .chapter-no{font-family:var(--serif);font-size:44px;font-weight:900;line-height:1;color:var(--accent);letter-spacing:.02em}
+  .chapter h2{font-family:var(--serif);font-size:clamp(21px,2.6vw,28px);line-height:1.4;font-weight:800;color:var(--ink);margin:0}
+  .chapter h3{font-family:var(--serif);font-size:18.5px;font-weight:700;margin:30px 0 12px;color:var(--ink)}
+  .lead{font-family:var(--sans);font-size:15px;line-height:1.95;color:var(--ink-soft);margin:0 0 18px;max-width:44em}
+  .main p,.main li{max-width:44em}
+  .main ul,.main ol{padding-left:1.5em}
+  blockquote{border-left:3px solid var(--accent);background:var(--card);margin:22px 0;padding:18px 24px;border-radius:0 8px 8px 0;max-width:44em}
+  blockquote p{margin:0;font-family:var(--serif);font-size:17px;line-height:1.95}
+  cite{color:var(--accent-deep);font-style:normal}
+  blockquote cite,.closing-quote cite{color:var(--accent-deep)}
+  .closing-quote{background:var(--accent-tint);border-left:3px solid var(--accent-deep);border-radius:0 10px 10px 0;margin:26px 0;padding:22px 26px;max-width:44em;font-family:var(--serif);font-size:17.5px;line-height:1.95;color:var(--accent-deep);font-weight:600}
+  .table-wrap{overflow-x:auto;margin:22px 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+  .table-wrap table{border-collapse:collapse;width:100%;min-width:520px;font-family:var(--sans);font-size:13.5px;line-height:1.8}
+  .table-wrap th,.table-wrap td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--hairline);vertical-align:top}
+  .table-wrap th{font-size:12px;letter-spacing:.08em;color:var(--ink-soft);font-weight:600;background:var(--pill-2);white-space:nowrap}
+  .table-wrap tr:last-child td{border-bottom:none}
+  .fig-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+  .fig-pair figure{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px;min-width:0}
+  .fig-pair img{display:block;max-width:100%;height:auto;border-radius:6px;cursor:zoom-in}
+  .fig-pair figcaption{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.7}
+  .turn-list{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin:24px 0}
+  .turn{width:100%;min-width:0;background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--muted);border-radius:10px;padding:20px 24px}
+  .turn:has(.turn-label:is(:lang(zh))) { border-left-color: var(--accent); }
+  .turn-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;font-family:var(--sans)}
+  .turn-name{font-weight:700;font-size:14.5px;color:var(--ink)}
+  .turn-role{font-family:var(--sans);font-size:11.5px;background:var(--pill);color:var(--ink-soft);border-radius:99px;padding:2px 10px}
+  .turn-label{font-family:var(--sans);font-size:11.5px;background:var(--accent-tint);color:var(--accent-deep);border-radius:99px;padding:2px 10px;font-weight:600}
+  .turn-body p{font-family:var(--sans);font-size:14.5px;line-height:1.9;color:var(--ink-soft);margin:0 0 10px}
+  .turn-body p:last-child{margin-bottom:0}
+  .footer{border-top:1px solid var(--rule);margin-top:30px;padding:26px 0 60px;font-family:var(--sans);font-size:12.5px;color:var(--muted);line-height:1.9}
+  .back-to-top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--card);color:var(--accent);font-size:17px;cursor:pointer}
+  @media (max-width:900px){
+    .wrap{width:calc(100% - 36px)}
+    .hero{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:44px}
+    .page{grid-template-columns:minmax(0,1fr);gap:0;padding-top:20px}
+    .sidebar{display:none}
+    .toc-mobile{display:block}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px}
+    .wrap{width:calc(100% - 28px)}
+    .chapter-head{flex-direction:column;align-items:flex-start;gap:4px}
+    .chapter-no{font-size:34px}
+    .speaker{padding:16px 0}
+    .turn{padding:16px}
+    .fig-pair{grid-template-columns:minmax(0,1fr)}
+    .table-wrap table{min-width:0;width:100%;table-layout:fixed}
+    .table-wrap th,.table-wrap td{padding:9px 10px;overflow-wrap:break-word;word-break:break-word;white-space:normal;font-size:12.5px}
+  }
+  @media (max-width:390px){
+    .wrap{width:calc(100% - 22px)}
+    body{font-size:15px}
+    .hero h1{font-size:26px}
+  }
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+  @media print{ .back-to-top,.sidebar,.toc-mobile{display:none!important} .page{grid-template-columns:minmax(0,1fr)} body{background:#fff} }
+  </style>
 </head>
 <body data-page-node-id="DXKBNxLFQZiXIKfbaBHPux">
   <header class="topbar" data-page-node-id="AXViKqjCArFQiRifwArGCR">
     <div class="wrap topbar-inner" data-page-node-id="FSJdWrsiPAd6TZibhsJaRw">
-      <span class="wordmark" data-page-node-id="FOdDuLyari7PFvZxE8wV76">AI创业与投资 · 课程笔记</span>
+      <span class="wordmark" data-page-node-id="FOdDuLyari7PFvZxE8wV76">北大《AI创业与投资》课堂笔记</span>
       <nav class="topbar-links" data-page-node-id="79DfizAf5isaC97Zbc4Vh6">
         <a href="#c1" data-page-node-id="NeVMYND7knNv6hs0h03O9t">背景</a>
         <a href="#c2" data-page-node-id="7YPXZdzEQ2TwuQEdxVtU5j">哲学</a>
@@ -1968,16 +2094,16 @@ div.pswp__img--placeholder,
     </div>
 
     
-  <nav aria-label="课程导引" style="border-top:2px solid #17191b;margin-top:48px;padding:32px 0 8px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
-    <h4 style="font-family:inherit;font-size:12px;letter-spacing:.14em;color:#6d7175;font-weight:700;margin:0 0 14px">北大《AI创业与投资》· 课程讲次</h4>
+  <nav aria-label="课程导引" style="border-top:2px solid var(--fg);margin-top:48px;padding:32px 0 8px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+    <h4 style="font-family:inherit;font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:700;margin:0 0 14px">北大《AI创业与投资》· 课程讲次</h4>
     <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 26px;padding:0;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;font-size:14.5px;line-height:1.8">
-      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:#6d7175;display:inline-block;min-width:52px">第 1 讲</span> <span style="font-weight:700;color:#17191b">创新相对论与百川的思考</span> <span style="font-family:monospace;font-size:12px;color:#6d7175">2026.09.09</span> <span style="font-family:monospace;font-size:12px;color:#6d7175">王小川</span> <span style="font-size:11px;background:#e8f0ea;color:#0f3d2c;border-radius:99px;padding:1px 9px">本讲</span></li>
-      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:#6d7175;display:inline-block;min-width:52px">第 2 讲</span> <a href="../20260916-zhuxiaohu/index.html" style="color:#17573f;font-weight:600">互联网和 AI 的创业与投资的异同</a> <span style="font-family:monospace;font-size:12px;color:#6d7175">2026.09.16</span> <span style="font-family:monospace;font-size:12px;color:#6d7175">朱啸虎</span></li>
-      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:#6d7175;display:inline-block;min-width:52px">第 3 讲</span> <a href="../20260923-liuyong/index.html" style="color:#17573f;font-weight:600">AI 创业的第一性框架：赛道和时机</a> <span style="font-family:monospace;font-size:12px;color:#6d7175">2026.09.23</span> <span style="font-family:monospace;font-size:12px;color:#6d7175">刘勇</span></li>
+      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:var(--muted);display:inline-block;min-width:52px">第 1 讲</span> <span style="font-weight:700;color:var(--fg)">创新相对论与百川的思考</span> <span style="font-family:monospace;font-size:12px;color:var(--muted)">2026.09.09</span> <span style="font-family:monospace;font-size:12px;color:var(--muted)">王小川</span> <span style="font-size:11px;background:var(--accent-tint);color:var(--accent-ink);border-radius:99px;padding:1px 9px">本讲</span></li>
+      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:var(--muted);display:inline-block;min-width:52px">第 2 讲</span> <a href="../20260916-zhuxiaohu/index.html" style="color:var(--accent);font-weight:600">互联网和 AI 的创业与投资的异同</a> <span style="font-family:monospace;font-size:12px;color:var(--muted)">2026.09.16</span> <span style="font-family:monospace;font-size:12px;color:var(--muted)">朱啸虎</span></li>
+      <li style="margin-bottom:8px"><span style="font-family:monospace;font-size:12px;color:var(--muted);display:inline-block;min-width:52px">第 3 讲</span> <a href="../20260923-liuyong/index.html" style="color:var(--accent);font-weight:600">AI 创业的第一性框架：赛道和时机</a> <span style="font-family:monospace;font-size:12px;color:var(--muted)">2026.09.23</span> <span style="font-family:monospace;font-size:12px;color:var(--muted)">刘勇</span></li>
     </ul>
-    <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid #dcd7cf;padding-top:18px;margin-bottom:22px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif"><span style="display:block;font-size:15px;color:#6d7175;cursor:default"><span style="display:block;font-size:11.5px;letter-spacing:.1em;margin-bottom:4px">上一讲</span>本课首讲</span><a href="../20260916-zhuxiaohu/index.html" style="display:block;font-size:15px;font-weight:700;color:#17573f;text-align:right;margin-left:auto"><span style="display:block;font-size:11.5px;letter-spacing:.1em;color:#6d7175;margin-bottom:4px">下一讲</span>第 2 讲 · 朱啸虎：互联网和 AI 的创业与投资的异同</a></div>
-    <div style="display:flex;gap:22px;flex-wrap:wrap;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;font-size:13.5px;border-top:1px solid #dcd7cf;padding-top:18px;line-height:2">
-      <span><span style="display:block;font-size:11.5px;letter-spacing:.12em;color:#6d7175;font-weight:700">课程总览</span><a href="../index.html" style="color:#3d4246">《AI创业与投资》课程目录</a></span>
+    <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px;margin-bottom:22px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif"><span style="display:block;font-size:15px;color:var(--muted);cursor:default"><span style="display:block;font-size:11.5px;letter-spacing:.1em;margin-bottom:4px">上一讲</span>本课首讲</span><a href="../20260916-zhuxiaohu/index.html" style="display:block;font-size:15px;font-weight:700;color:var(--accent);text-align:right;margin-left:auto"><span style="display:block;font-size:11.5px;letter-spacing:.1em;color:var(--muted);margin-bottom:4px">下一讲</span>第 2 讲 · 朱啸虎：互联网和 AI 的创业与投资的异同</a></div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;font-size:13.5px;border-top:1px solid var(--border);padding-top:18px;line-height:2">
+      <span><span style="display:block;font-size:11.5px;letter-spacing:.12em;color:var(--muted);font-weight:700">课程总览</span><a href="../index.html" style="color:var(--fg)">《AI创业与投资》课程目录</a></span>
     </div>
   </nav>
 
